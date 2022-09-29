@@ -22,4 +22,4 @@ somewhere on the internet.)
 # Overall Architecture
 How NS Wallet Mobile App fits in a larger picture?
 
-![](docs/NSWallet-NS Wallet Architecture.drawio.png)
+![](<./docs/NSWallet-NS Wallet Architecture.drawio.png>)
