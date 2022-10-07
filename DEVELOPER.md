@@ -93,11 +93,12 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
        ```shell
        emulator -avd Pixel_4_XL_API_31 -writable-system -no-snapshot-load
        ```
-   3. Restart as root user
+   3. Open a new terminal session, and run commands described in steps 3, 4 & 5.
+      <br> Restart as root user
        ```shell
        adb root
        ```    
-   4. Open a new terminal session, and run commands described in steps 3 & 4. 
+   4. Remount 
        ```shell
        adb -s emulator-5554 remount
        ```
