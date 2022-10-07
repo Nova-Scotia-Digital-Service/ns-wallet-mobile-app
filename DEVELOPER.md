@@ -162,7 +162,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
     ```shell
     # Install NS Wallet project dependencies (package.json)
     # from the root of the cloned repository
-    npm install:all --legacy-peer-deps
+    npm run install:all --legacy-peer-deps
     ```
    > **IMPORTANT:** If you are running `npm install:all` manually, you must provide `--legacy-peer-deps`
 
