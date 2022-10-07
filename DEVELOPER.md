@@ -93,7 +93,11 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
        ```shell
        emulator -avd Pixel_4_XL_API_31 -writable-system -no-snapshot-load
        ```
-   3. Open a new terminal session, and run commands described in steps 3 & 4. 
+   3. Restart as root user
+       ```shell
+       adb root
+       ```    
+   4. Open a new terminal session, and run commands described in steps 3 & 4. 
        ```shell
        adb -s emulator-5554 remount
        ```
@@ -101,7 +105,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
       ```
       remount succeeded
       ```
-   4. Create a file with following host entries. We will copy this file into the emulator.
+   5. Create a file with following host entries. We will copy this file into the emulator.
         1. create a file
        ```shell
        vi myhosts 
