@@ -158,7 +158,11 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
    <small><kbd>Esc</kbd> + <kbd>:</kbd> + <kbd>wq</kbd> - to save and quit  </small>
    <br>
    <br>
-4. npm build
+4. Switch to correct node version
+   ```shell
+   nvm use 16     // Note the node version should match with the version specified in app/package.json -> engines -> node version  
+   ```   
+5. npm build
     ```shell
     # Install NS Wallet project dependencies (package.json)
     # from the root of the cloned repository
