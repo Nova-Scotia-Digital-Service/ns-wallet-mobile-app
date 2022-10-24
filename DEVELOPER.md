@@ -115,7 +115,22 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
        ```shell
        adb -s emulator-5554 push myhosts /system/etc/hosts 
        ```
-
+   5. Verify if the host entries are updated correctly!
+      ```shell
+       # To Verify
+       $ adb shell
+       $ cat /etc/hosts 
+      
+       127.0.0.1       localhost
+       ::1             ip6-localhost
+       192.168.0.117   host.docker.internal
+      ``` 
+   6. Goto Emulator -> ⚙️ <kbd> Settings</kbd>  -> 🔒 Security
+      1. Set a pin for screen lock
+      2. Add a Fingerprint (To enable biometric authentication)
+      <br>
+      
+   7. Done! 
 # Development
 
 ### Workspace Setup
@@ -160,7 +175,13 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
     npm install:all --legacy-peer-deps
     ```
    > **IMPORTANT:** If you are running `npm install:all` manually, you must provide `--legacy-peer-deps`
-
+   
+   > **Troubleshooting**
+   >  - If you get this error: ```run-s: command not found``` <br>
+   >    **Solution**: Run the following command to install npm-run-all
+   >    ```
+   >    npm i npm-run-all
+   >    ```
 ### Running in an Android emulator
 
 5. Run the app in the emulator
