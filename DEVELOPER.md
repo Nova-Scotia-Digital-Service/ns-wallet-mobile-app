@@ -254,16 +254,11 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
     ```shell
     # Install NS Wallet project dependencies (package.json)
     # from the root of the cloned repository
-    npm run install:all --legacy-peer-deps
+    $ npm install npm-run-all --save-dev
+    $ npm run install:all --legacy-peer-deps
     ```
-   > **IMPORTANT:** If you are running `npm install:all` manually, you must provide `--legacy-peer-deps`
+   > **IMPORTANT:** If you are running `npm run install:all` manually, you must provide `--legacy-peer-deps`
    
-   > **Troubleshooting**
-   >  - If you get this error: ```run-s: command not found``` <br>
-   >    **Solution**: Run the following command to install npm-run-all
-   >    ```
-   >    npm i npm-run-all
-   >    ```
 ### Running in an Android emulator
 
 5. Run the app in the emulator
