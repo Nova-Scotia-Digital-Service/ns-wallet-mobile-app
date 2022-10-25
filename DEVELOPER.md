@@ -1,13 +1,13 @@
-# Building and Testing NS Wallet
+# Developers Guide
 
 <!-- TOC -->
-* [Building and Testing NS Wallet](#building-and-testing-ns-wallet)
+* [Developers Guide](#developers-guide)
   * [Prerequisite Software](#prerequisite-software)
   * [Prerequisite Services](#prerequisite-services)
   * [Environment Setup](#environment-setup)
     * [React Native & Android Emulator](#react-native--android-emulator)
     * [Create Android emulator](#create-android-emulator)
-* [Development](#development)
+  * [Development](#development)
     * [Workspace Setup](#workspace-setup)
     * [Running in an Android Emulator](#running-in-an-android-emulator)
     * [Debugging in Intellij and Android Emulator](#debugging-in-intellij-and-android-emulator)
@@ -144,8 +144,9 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
       2. Add a Fingerprint (To enable biometric authentication)
       <br>
       
-   7. Done! 
-# Development
+   7. Done!
+
+## Development
 
 ### Workspace Setup
 
