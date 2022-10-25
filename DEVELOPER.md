@@ -280,6 +280,45 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
    export RCT_METRO_PORT=10001   # (Optional) Default port is 8081 - often runs into conflicts
    npm run android
    ```
+### Debugging in Android Emulator
+
+**UI Inspection:**
+1. Install `react-devtools`, if you haven't already
+   ```shell
+   npm install -g react-devtools
+   ```
+2. Run devtools (you can use this only for UI inspections)
+   ```
+   react-devtools 
+   ```
+3. In a separate terminal, run the following command. To redirect network to react-devtools
+   ```shell
+   adb reverse tcp:8097 tcp:8097
+   ```
+**Debug Application Code in Intellij or WebStorm**
+1. Open directory `/app` as project
+2. Run/Debug Configuration. 
+   > [Optional] update the port to `10001`. As the default port `8081` tends to run into 
+   conflicts. If you don't have other services running on port 8081. You can skip changing the port
+   
+   ![](<./docs/intellij-run-debug-config.png>)
+
+3. Start Wallet in Debug Mode. <br>
+   ![img.png](<./docs/intellij-debug-btn.png>)
+
+4. Now you can add breakpoint in your IDE.
+   ![img.png](<./docs/intellij-debugging.png>)
+
+> **Troubleshooting:** <br>
+> If debug does not showup. Ensure you have enabled debugging on the device by clicking <kbd>command</kbd> + <kbd>m</kbd>
+> on the device and select <kbd>Debug</kbd>.
+>  ----
+> ![](<./docs/Emulator-debug-menu.png>)
+> 
+
+### Debugging in VSCode
+
+[![](https://img.youtube.com/vi/UE66n7HOIAg/0.jpg)](https://www.youtube.com/watch?v=UE66n7HOIAg)
 
 ## Source Code Information
 
