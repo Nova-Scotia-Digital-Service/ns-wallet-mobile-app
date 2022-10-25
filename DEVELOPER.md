@@ -3,12 +3,15 @@
 <!-- TOC -->
 * [Building and Testing NS Wallet](#building-and-testing-ns-wallet)
   * [Prerequisite Software](#prerequisite-software)
+  * [Prerequisite Services](#prerequisite-services)
   * [Environment Setup](#environment-setup)
     * [React Native & Android Emulator](#react-native--android-emulator)
     * [Create Android emulator](#create-android-emulator)
 * [Development](#development)
     * [Workspace Setup](#workspace-setup)
-    * [Running in an Android emulator](#running-in-an-android-emulator)
+    * [Running in an Android Emulator](#running-in-an-android-emulator)
+    * [Debugging in Android Emulator](#debugging-in-android-emulator)
+    * [Debugging in VSCode](#debugging-in-vscode)
   * [Source Code Information](#source-code-information)
 <!-- TOC -->
 
@@ -262,7 +265,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
     ```
    > **IMPORTANT:** If you are running `npm run install:all` manually, you must provide `--legacy-peer-deps`
    
-### Running in an Android emulator
+### Running in an Android Emulator
 
 5. Run the app in the emulator
    > Note - This step requires Android emulator to be up and running.
