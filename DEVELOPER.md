@@ -10,8 +10,8 @@
 * [Development](#development)
     * [Workspace Setup](#workspace-setup)
     * [Running in an Android Emulator](#running-in-an-android-emulator)
-    * [Debugging in Intellij + Android Emulator](#debugging-in-intellij--android-emulator)
-    * [Debugging in VSCode + Android Emulator](#debugging-in-vscode--android-emulator)
+    * [Debugging in Intellij and Android Emulator](#debugging-in-intellij-and-android-emulator)
+    * [Debugging in VSCode and Android Emulator](#debugging-in-vscode-and-android-emulator)
   * [Source Code Information](#source-code-information)
 <!-- TOC -->
 
@@ -283,7 +283,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
    export RCT_METRO_PORT=10001   # (Optional) Default port is 8081 - often runs into conflicts
    npm run android
    ```
-### Debugging in Intellij + Android Emulator
+### Debugging in Intellij and Android Emulator
 
 **UI Inspection:**
 1. Install `react-devtools`, if you haven't already
@@ -314,11 +314,11 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
     > Troubleshooting: <br>
     > If debug does not showup. Ensure you have enabled debugging on the device by clicking <kbd>command</kbd> + <kbd>m</kbd>
     > on the device and select <kbd>Debug</kbd>.
-    >  ----
+    > <br>
     > ![](<./docs/Emulator-debug-menu.png>)
     > 
 
-### Debugging in VSCode + Android Emulator
+### Debugging in VSCode and Android Emulator
 
 [![](https://img.youtube.com/vi/UE66n7HOIAg/0.jpg)](https://www.youtube.com/watch?v=UE66n7HOIAg)
 
