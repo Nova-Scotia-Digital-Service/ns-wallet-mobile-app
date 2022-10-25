@@ -246,7 +246,10 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 5. Switch to correct node version
 
    ```shell
-   nvm use 16     // Note the node version should match with the version specified in app/package.json -> engines -> node version  
+   nvm use 16     # Note the node version should match with the version specified in app/package.json -> engines -> node version
+   
+   # Alternatively you can set Node update the default node version by running the following command
+   nvm alias default 16    # or nvm alias default 16.14.2  - for a specific version.          
    ```   
 
 6. npm build
