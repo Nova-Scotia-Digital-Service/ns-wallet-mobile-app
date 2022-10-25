@@ -312,12 +312,12 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 4. Now you can add breakpoint in your IDE.
    ![img.png](<./docs/intellij-debugging.png>)
 
-> **Troubleshooting:** <br>
-> If debug does not showup. Ensure you have enabled debugging on the device by clicking <kbd>command</kbd> + <kbd>m</kbd>
-> on the device and select <kbd>Debug</kbd>.
->  ----
-> ![](<./docs/Emulator-debug-menu.png>)
-> 
+    > **Troubleshooting:** <br>
+    > If debug does not showup. Ensure you have enabled debugging on the device by clicking <kbd>command</kbd> + <kbd>m</kbd>
+    > on the device and select <kbd>Debug</kbd>.
+    >  ----
+    > ![](<./docs/Emulator-debug-menu.png>)
+    > 
 
 ### Debugging in VSCode
 
