@@ -1,4 +1,7 @@
+import { useNavigation } from '@react-navigation/core'
 import {
+  Stacks,
+  Screens,
   Agent,
   AgentProvider,
   AuthProvider,
@@ -12,26 +15,71 @@ import {
   ThemeProvider,
   ConfigurationProvider,
   initLanguages,
-} from "aries-bifold";
-import React, { useEffect, useState } from "react";
-import { StatusBar } from "react-native";
-import SplashScreen from "react-native-splash-screen";
-import Toast from "react-native-toast-message";
-import _merge from "lodash.merge";
-import bcwallet from "./src";
+} from 'aries-bifold'
+import React, { useEffect, useState, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Linking, StatusBar } from 'react-native'
+import SplashScreen from 'react-native-splash-screen'
+import Toast from 'react-native-toast-message'
 
-const { theme, localization, configuration } = bcwallet;
+import bcwallet from './src'
 
-initLanguages(localization);
+const { theme, localization, configuration } = bcwallet
+
+initLanguages(localization)
+
 const App = () => {
-  const [agent, setAgent] = useState<Agent | undefined>(undefined);
-  initStoredLanguage();
+  useMemo(() => {
+    initStoredLanguage().then()
+  }, [])
+
+  const [agent, setAgent] = useState<Agent | undefined>(undefined)
+  const { t } = useTranslation()
+  const { navigate } = useNavigation()
+
+  const helpLink = 'https://www2.gov.bc.ca/gov/content/governments/government-id/bc-wallet/help'
+
+  const settings = [
+    {
+      header: {
+        title: t('Settings.Help'),
+        icon: 'help',
+      },
+      data: [
+        {
+          title: t('Settings.HelpUsingBCWallet'),
+          accessibilityLabeL: t('Settings.HelpUsingBCWallet'),
+          onPress: () => Linking.openURL(helpLink),
+        },
+      ],
+    },
+    {
+      header: {
+        title: t('Settings.MoreInformation'),
+        icon: 'info',
+      },
+      data: [
+        {
+          title: t('Settings.TermsOfUse'),
+          accessibilityLabel: t('Settings.TermsOfUse'),
+          onPress: () => navigate(Stacks.SettingStack as never, { screen: Screens.Terms } as never),
+        },
+        {
+          title: t('Settings.IntroductionToTheApp'),
+          accessibilityLabel: t('Settings.IntroductionToTheApp'),
+          onPress: () => navigate(Stacks.SettingStack as never, { screen: Screens.Onboarding } as never),
+        },
+      ],
+    },
+  ]
+
+  configuration.settings = settings
 
   useEffect(() => {
     // Hide the native splash / loading screen so that our
     // RN version can be displayed.
-    SplashScreen.hide();
-  }, []);
+    SplashScreen.hide()
+  }, [])
 
   return (
     <StoreProvider>
@@ -56,7 +104,7 @@ const App = () => {
         </ThemeProvider>
       </AgentProvider>
     </StoreProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App
