@@ -1,5 +1,5 @@
 {
-  "name": "bcwallet-app",
+  "name": "nswallet-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,7 +20,8 @@
     "postinstall:patch": "npx patch-package",
     "postinstall": "run-s postinstall:copy-patches postinstall:patch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier --ignore-path .gitignore '**/*.+(js|jsx|json|ts|tsx|md|yml|yaml)'"
+    "prettier": "prettier --ignore-path .gitignore '**/*.+(js|jsx|json|ts|tsx|md|yml|yaml)'",
+    "pre-build": "./ci-scripts/appcenter-pre-build.sh"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,9 @@
     "@react-navigation/devtools": "6.0.8",
     "@react-navigation/native": "6.0.6",
     "@react-navigation/stack": "6.0.11",
+    "appcenter": "4.4.5",
+    "appcenter-analytics": "4.4.5",
+    "appcenter-crashes": "4.4.5",
     "aries-bifold": "file:../bifold/core",
     "axios": "0.21.4",
     "i18next": "21.4.0",

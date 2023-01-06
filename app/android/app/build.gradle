@@ -136,7 +136,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "ca.bc.gov.BCWallet"
+        applicationId "ca.ns.gov.nswallet"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 1
@@ -207,7 +207,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation 'net.java.dev.jna:jna:5.2.0'
-    
+
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
