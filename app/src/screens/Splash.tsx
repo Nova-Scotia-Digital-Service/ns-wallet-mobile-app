@@ -170,7 +170,7 @@ const Splash: React.FC = () => {
 
         const newAgent = new Agent(
           {
-            label: 'BC Wallet',
+            label: 'NS Wallet',
             mediatorConnectionsInvite: Config.MEDIATOR_URL,
             mediatorPickupStrategy: MediatorPickupStrategy.Implicit,
             walletConfig: { id: credentials.id, key: credentials.key },

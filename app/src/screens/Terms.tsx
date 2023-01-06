@@ -99,12 +99,12 @@ const Terms: React.FC = () => {
       <ScrollView style={[style.container]}>
         <InfoTextBox>Please agree to the terms and conditions below before using this application.</InfoTextBox>
         <Text style={[style.bodyText, { marginTop: 20 }]}>
-          The BC Wallet App (the “Licensed Application”) allows you (“You” or “you”) to store your verifiable
+          The NS Wallet App (the “Licensed Application”) allows you (“You” or “you”) to store your verifiable
           credentials, which are digital credentials issued by third party issuers that you can use to prove something
           about yourself by presenting those credentials to another party who needs to verify those credentials. This
           End User License Agreement (“EULA”) sets out the terms and conditions that apply to you when you download
-          and/or use the BC Wallet App. This EULA is a legal agreement between you, as the end user of the Licensed
-          Application (“You” or “you”), and Her Majesty the Queen in Right of the Province of British Columbia (the
+          and/or use the NS Wallet App. This EULA is a legal agreement between you, as the end user of the Licensed
+          Application (“You” or “you”), and Her Majesty the Queen in Right of the Province of Nova Scotia (the
           “Province”). You may access the Licensed Application on either a Google or Apple mobile device. Some of the
           terms that follow reference Google or Apple, as applicable, and such references will apply only to the extent
           that you are accessing the Licensed Application through that particular platform. By indicating that you agree
@@ -268,7 +268,7 @@ const Terms: React.FC = () => {
             Services”); (b) the Province is solely responsible for the provision of Support Services, if any; and (c)
             Apple has no obligation whatsoever to furnish any maintenance and support services with respect to the
             Licensed Application. All questions respecting the Support Services, and all general inquiries respecting
-            the Licensed Application, should be directed to: Product Owner, BC Wallet, ditrust@gov.bc.ca, 4000 Seymour
+            the Licensed Application, should be directed to: Product Owner, NS Wallet, ditrust@gov.bc.ca, 4000 Seymour
             Place, Victoria, BC, V8W 9V1.
           </Text>
         </View>
@@ -372,7 +372,7 @@ const Terms: React.FC = () => {
             </Text>{' '}
             Certain information is also collected by the Licensed Application as outlined in the{' '}
             <Text style={[style.link]} onPress={() => openLink(digitalWalletPrivacyUrl)}>
-              BC Wallet App Privacy Policy
+              NS Wallet App Privacy Policy
             </Text>{' '}
             (the “Privacy Policy”), which is incorporated by reference into and forms part of this EULA. You consent to
             the collection by the Licensed Application of this information which, along with your Content, is stored
@@ -436,9 +436,9 @@ const Terms: React.FC = () => {
             are inserted for convenience only and will not be used in interpreting or construing any provision of this
             EULA. If any provision of this EULA is invalid, illegal or unenforceable, that provision will be severed
             from this EULA and all other provisions will remain in full force and effect. This EULA will be governed by
-            and construed in accordance with the laws of the province of British Columbia and the applicable laws of
+            and construed in accordance with the laws of the province of Nova Scotia and the applicable laws of
             Canada. By using the Licensed Application, you consent to the exclusive jurisdiction and venue of the courts
-            of the province of British Columbia, sitting in Victoria, for the hearing of any dispute arising from or
+            of the province of Nova Scotia, sitting in Victoria, for the hearing of any dispute arising from or
             related to this EULA and its subject matter.
           </Text>
         </View>

@@ -120,7 +120,7 @@ export const zeroOpacity = 0.0
 export const borderWidth = 2
 
 const BrandColors: BrandColors = {
-  primary: '#003366',
+  primary: '#004a8b',
   primaryDisabled: `rgba(0, 51, 102, ${lightOpacity})`,
   secondary: '#FFFFFFFF',
   secondaryDisabled: `rgba(0, 51, 102, ${heavyOpacity})`,
@@ -604,14 +604,14 @@ export const Assets = {
     logoSecondary: {
       src: require('./assets/img/logo-large.png'),
       aspectRatio: 1,
-      height: '33%',
-      width: '33%',
+      height: '30%',
+      width: '50%',
       resizeMode: 'contain',
     },
     logoPrimary: {
       src: require('./assets/img/logo-large-white.png'),
-      height: 170,
-      width: 170,
+      width: 118,
+      height: 66,
     },
   },
 }

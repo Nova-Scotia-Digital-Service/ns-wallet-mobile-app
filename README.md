@@ -1,6 +1,8 @@
 
 ![Lifecycle:Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)
 
+
+
 > This project is a fork of [BC Wallet](https://github.com/bcgov/bc-wallet-mobile)
 
 # Table of Contents

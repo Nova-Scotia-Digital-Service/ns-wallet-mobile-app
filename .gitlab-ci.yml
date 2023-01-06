@@ -1,0 +1,92 @@
+default:
+  image: reactnativecommunity/react-native-android:latest
+
+
+variables:
+  GIT_SUBMODULE_STRATEGY: none
+
+stages:
+# List of stages for jobs, and their order of execution
+  - prepare
+  - build
+  - build-platform
+#  - test
+  - deploy
+
+create-env-file:
+  stage: prepare
+  variables:
+    MEDIATOR_URL: $MEDIATOR_URL
+  script:
+    - cd app
+    - touch .env
+    - echo "MEDIATOR_URL=$MEDIATOR_URL" > .env
+  cache:
+    key: npm
+    untracked: true
+    paths:
+      - app/.env
+
+
+build-project:
+  inherit:
+    default: [image]
+  stage: build
+  before_script:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
+    - npm install npm-run-all --save-dev
+    - cd bifold/core
+    - npm i @aries-framework/react-hooks@0.3.0 --force
+  script:
+    - cd ../../app
+    - npm ci
+  cache:
+    key: npm
+    untracked: true
+    paths:
+      - app/.env
+      - app/node_modules
+      - bifold/core/node_modules
+
+android-build:
+  inherit:
+    default: [image]
+  stage: build-platform
+  variables:
+    VERSION_CODE: $CI_PIPELINE_IID
+    VERSION_NAME: $VERSION_NAME
+  script:
+    - pwd
+    - cd app/android
+    - ./gradlew bundleRelease
+  cache:
+    key: npm
+    untracked: true
+    paths:
+      - app/.env
+      - app/node_modules
+      - bifold/core/node_modules
+      - app/android/app/build
+
+
+deploy-android-appcenter:
+  stage: deploy
+  variables:
+    APP_CENTER_API_TOKEN: $APP_CENTER_API_TOKEN
+    PLAY_STORE_JKS_ALIAS: $PLAY_STORE_JKS_ALIAS
+    PLAY_STORE_JKS_PASSWD: $PLAY_STORE_JKS_PASSWD
+    VERSION_CODE: $CI_PIPELINE_IID
+    VERSION_NAME: $VERSION_NAME
+  before_script:
+    - npm install --location=global appcenter-cli
+    - appcenter login --token $APP_CENTER_API_TOKEN --disable-telemetry
+  script:
+    - appcenter distribute release -f app/android/app/build/outputs/bundle/release/app-release.aab -b $VERSION_NAME -g Collaborators --app SNS-IS-Platforms-Team/NSWalletApp
+  cache:
+    key: npm
+    untracked: true
+    paths:
+      - app/node_modules
+      - bifold/core/node_modules
+      - app/android/app/build
