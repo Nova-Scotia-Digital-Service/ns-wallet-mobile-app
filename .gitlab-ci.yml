@@ -53,6 +53,8 @@ android-build:
   inherit:
     default: [image]
   stage: build-platform
+  before_script:
+    - npm i @react-native-community/cli-platform-android
   variables:
     VERSION_CODE: $CI_PIPELINE_IID
     VERSION_NAME: $VERSION_NAME
