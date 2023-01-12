@@ -88,5 +88,4 @@ deploy-android-appcenter:
     untracked: true
     paths:
       - app/node_modules
-      - bifold/core/node_modules
-      - app/android/app/build
+      #- app/android/app/build
