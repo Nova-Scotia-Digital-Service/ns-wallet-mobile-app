@@ -38,9 +38,8 @@ build-project:
     - npm install npm-run-all --save-dev
     - cd bifold/core
     - npm i @aries-framework/react-hooks@0.3.0 --force
-    - cd ../.. && npm run install:all --legacy-peer-deps
   script:
-    - cd app
+    - cd ../../app
     - npm ci
   cache:
     key: npm
@@ -60,8 +59,7 @@ android-build:
   script:
     - pwd
     - cd app/android
-    - ./gradlew buildDebug
-    - ./gradlew bundleRelease
+    - ./gradlew bundleRelease --debug
   cache:
     key: npm
     untracked: true
