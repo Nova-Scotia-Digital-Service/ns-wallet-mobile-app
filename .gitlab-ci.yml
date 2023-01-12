@@ -58,6 +58,9 @@ android-build:
     VERSION_NAME: $VERSION_NAME
   script:
     - pwd
+    - ls -la /app/node_modules
+    - ls -la /bifold/core/node_modules
+    - ls -la /bifold
     - cd app/android
     - ./gradlew clean
     - ./gradlew bundleRelease
