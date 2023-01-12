@@ -58,6 +58,7 @@ android-build:
     VERSION_NAME: $VERSION_NAME
   script:
     - pwd
+    - ls -la
     - ls -la ./app/node_modules
     - ls -la ./bifold/core/node_modules
     - ls -la ./bifold
