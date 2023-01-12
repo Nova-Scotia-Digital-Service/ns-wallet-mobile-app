@@ -59,6 +59,7 @@ android-build:
   script:
     - pwd
     - cd app/android
+    - ./gradlew clean
     - ./gradlew bundleRelease
   cache:
     key: npm
