@@ -59,7 +59,7 @@ android-build:
   script:
     - pwd
     - cd app/android
-    - ./gradlew bundleRelease --debug
+    - ./gradlew bundleRelease
   cache:
     key: npm
     untracked: true
