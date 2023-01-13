@@ -3,7 +3,7 @@ default:
 
 
 variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+  GIT_SUBMODULE_STRATEGY: none
 
 stages:
 # List of stages for jobs, and their order of execution
@@ -26,6 +26,8 @@ create-env-file:
     untracked: true
     paths:
       - app/.env
+  tags:
+    - ext
 
 
 build-project:
@@ -48,6 +50,8 @@ build-project:
       - app/.env
       - app/node_modules
       - bifold/core/node_modules
+  tags:
+    - ext
 
 android-build:
   inherit:
@@ -58,12 +62,7 @@ android-build:
     VERSION_NAME: $VERSION_NAME
   script:
     - pwd
-    - ls -la
-    - ls -la app/node_modules
-    - ls -la bifold/core/node_modules
-    - ls -la bifold
     - cd app/android
-    - ./gradlew clean
     - ./gradlew bundleRelease
   cache:
     key: npm
@@ -73,9 +72,13 @@ android-build:
       - app/node_modules
       - bifold/core/node_modules
       - app/android/app/build
+  tags:
+    - ext
 
 
 deploy-android-appcenter:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
   stage: deploy
   variables:
     APP_CENTER_API_TOKEN: $APP_CENTER_API_TOKEN
@@ -93,4 +96,7 @@ deploy-android-appcenter:
     untracked: true
     paths:
       - app/node_modules
-      #- app/android/app/build
+      - bifold/core/node_modules
+      - app/android/app/build
+  tags:
+    - ext
